@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FahmiHza — Jasa Video AI Profesional Indonesia</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#080A0E;--deep:#0D1117;--surface:#131922;--card:#1A2235;
+  --border:rgba(255,255,255,0.07);--glow:rgba(0,210,180,0.22);
+  --cyan:#00D2B4;--cyan-d:rgba(0,210,180,0.10);
+  --gold:#F0A500;--gold-d:rgba(240,165,0,0.10);
+  --text:#F0F2F5;--muted:#7A8899;--soft:#B0BCC8;
+  --red-d:rgba(255,70,70,0.1);--red:rgba(255,100,100,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--black);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(8,10,14,0.93);backdrop-filter:blur(18px);border-bottom:0.5px solid var(--border)}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none}
+.nav-logo span{color:var(--cyan)}
+.nav-cta{display:flex;gap:0.5rem;align-items:center}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:0.45rem;padding:0.6rem 1.25rem;border-radius:100px;font-family:'IBM Plex Sans',sans-serif;font-size:0.875rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all 0.2s ease;border:none;white-space:nowrap}
+.btn svg{flex-shrink:0}
+.btn-primary{background:var(--cyan);color:#050D10;font-weight:600}
+.btn-primary:hover{background:#00F0CC;transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,210,180,0.35)}
+.btn-outline{background:transparent;color:var(--text);border:0.5px solid rgba(255,255,255,0.2)}
+.btn-outline:hover{background:rgba(255,255,255,0.05)}
+.btn-lg{padding:0.85rem 1.85rem;font-size:1rem;font-weight:600}
+.btn-wa{background:#25D366;color:#fff;font-weight:600}
+.btn-wa:hover{background:#2DE070;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,0.35)}
+.btn-tt{background:#010101;color:#fff;border:0.5px solid rgba(255,255,255,0.12)}
+.btn-tt:hover{background:#1a1a1a;transform:translateY(-1px)}
+.btn-tg{background:#2AABEE;color:#fff;font-weight:600}
+.btn-tg:hover{background:#3EC0FF;transform:translateY(-1px);box-shadow:0 6px 20px rgba(42,171,238,0.3)}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 1.25rem 4rem;overflow:hidden}
+.hero-glow-1{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,210,180,0.09) 0%,transparent 70%);top:-100px;left:-180px;pointer-events:none}
+.hero-glow-2{position:absolute;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(240,165,0,0.07) 0%,transparent 70%);bottom:0;right:-100px;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:0.45rem;padding:0.35rem 0.9rem;background:var(--cyan-d);border:0.5px solid var(--glow);border-radius:100px;font-size:0.72rem;color:var(--cyan);font-weight:600;margin-bottom:1.5rem;letter-spacing:0.05em;text-transform:uppercase;animation:fadeUp 0.6s ease both}
+.hero-badge .dot{width:5px;height:5px;background:var(--cyan);border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,8vw,4.8rem);font-weight:700;line-height:1.08;letter-spacing:-0.03em;max-width:780px;margin-bottom:1.25rem;animation:fadeUp 0.7s 0.1s ease both}
+.hero h1 .ac{color:var(--cyan)}.hero h1 .go{color:var(--gold)}
+.hero-sub{font-size:clamp(0.9rem,2.5vw,1.05rem);color:var(--soft);max-width:500px;line-height:1.75;margin-bottom:0.85rem;animation:fadeUp 0.7s 0.2s ease both}
+.hero-trust-line{font-size:0.8rem;color:var(--muted);margin-bottom:1.75rem;animation:fadeUp 0.7s 0.25s ease both;display:flex;align-items:center;justify-content:center;gap:0.4rem}
+.hero-trust-line .ht-dot{width:4px;height:4px;border-radius:50%;background:var(--muted)}
+.urgency-pill{display:inline-flex;align-items:center;gap:0.4rem;padding:0.28rem 0.8rem;background:var(--red-d);border:0.5px solid rgba(255,80,80,0.25);border-radius:100px;font-size:0.68rem;color:var(--red);font-weight:600;letter-spacing:0.04em;margin-bottom:1.4rem;animation:fadeUp 0.6s 0.15s ease both}
+.urgency-pill .up-dot{width:5px;height:5px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite}
+.hero-actions{display:flex;gap:0.65rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.7s 0.3s ease both}
+.hero-credibility{font-size:0.75rem;color:var(--muted);margin-top:0.85rem;animation:fadeUp 0.7s 0.35s ease both}
+.hero-credibility span{color:var(--soft)}
+.hero-trust-proof{font-size:0.72rem;color:var(--muted);margin-top:0.35rem;animation:fadeUp 0.7s 0.4s ease both;font-style:italic}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-stats{display:flex;margin-top:2.5rem;flex-wrap:nowrap;justify-content:center;background:var(--surface);border:0.5px solid var(--border);border-radius:16px;overflow:hidden;animation:fadeUp 0.7s 0.4s ease both;width:100%;max-width:500px}
+.hero-stat{flex:1;text-align:center;padding:1rem 0.5rem;border-right:0.5px solid var(--border)}
+.hero-stat:last-child{border-right:none}
+.hstat-num{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;line-height:1}
+.hstat-lbl{font-size:0.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:0.25rem;line-height:1.3}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--deep);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:1.1rem 1.25rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.trust-bar::-webkit-scrollbar{display:none}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1rem;min-width:max-content;padding:0 0.25rem}
+.trust-lbl{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);white-space:nowrap}
+.trust-items{display:flex;gap:0.6rem}
+.trust-item{display:flex;align-items:center;gap:0.4rem;padding:0.35rem 0.85rem;background:var(--card);border:0.5px solid var(--border);border-radius:100px;font-size:0.74rem;color:var(--soft);font-weight:500;white-space:nowrap}
+
+/* ── SECTIONS ── */
+.sec{position:relative;z-index:1;padding:4rem 1.25rem;max-width:1100px;margin:0 auto}
+.stag{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:0.6rem}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.85rem}
+.ssub{font-size:0.95rem;color:var(--soft);max-width:480px;line-height:1.7}
+.sec-head{margin-bottom:2.5rem}
+.divider{width:100%;height:0.5px;background:var(--border)}
+
+/* ── VIDEO PROOF SECTION ── */
+.video-wrap{background:var(--deep);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.video-card{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:var(--surface);transition:border-color 0.25s,transform 0.25s,box-shadow 0.25s}
+.video-card:hover{border-color:var(--glow);transform:scale(1.02);box-shadow:0 12px 36px rgba(0,210,180,0.12)}
+.video-card iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
+.video-label{padding:0.5rem 0.85rem;background:var(--card);border-top:0.5px solid var(--border);font-size:0.7rem;font-weight:600;color:var(--soft);letter-spacing:0.03em}
+
+/* ── SERVICES ── */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:var(--border);border:0.5px solid var(--border);border-radius:14px;overflow:hidden}
+.svc{background:var(--deep);padding:1.5rem;transition:background 0.2s}
+.svc:hover{background:var(--surface)}
+.svc-icon{width:42px;height:42px;border-radius:10px;background:var(--cyan-d);border:0.5px solid var(--glow);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1rem}
+.svc-icon.g{background:var(--gold-d);border-color:rgba(240,165,0,0.2)}
+.svc h3{font-family:'Space Grotesk',sans-serif;font-size:0.975rem;font-weight:700;margin-bottom:0.4rem}
+.svc p{font-size:0.82rem;color:var(--soft);line-height:1.55}
+
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1rem}
+.why-card{background:var(--surface);border:0.5px solid var(--border);border-radius:14px;padding:1.35rem;transition:border-color 0.2s,transform 0.2s}
+.why-card:hover{border-color:var(--glow);transform:translateY(-2px)}
+.why-num{font-family:'Space Grotesk',sans-serif;font-size:1.75rem;font-weight:700;color:var(--cyan);line-height:1;margin-bottom:0.4rem}
+.why-card h4{font-family:'Space Grotesk',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:0.35rem}
+.why-card p{font-size:0.8rem;color:var(--muted);line-height:1.5}
+
+/* ── MARQUEE LOGOS — dual row ── */
+.logos-wrap{background:var(--deep);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:3.5rem 0}
+.logos-head{max-width:1100px;margin:0 auto 2rem;padding:0 1.25rem}
+.marquee-track{overflow:hidden;position:relative;margin-bottom:0.75rem}
+.marquee-track:last-child{margin-bottom:0}
+.marquee-track::before,.marquee-track::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.marquee-track::before{left:0;background:linear-gradient(to right,var(--deep),transparent)}
+.marquee-track::after{right:0;background:linear-gradient(to left,var(--deep),transparent)}
+.marquee-inner{display:flex;gap:1rem;width:max-content}
+.marquee-ltr{animation:marquee-ltr 50s linear infinite}
+.marquee-rtl{animation:marquee-rtl 50s linear infinite}
+.marquee-ltr:hover,.marquee-rtl:hover{animation-play-state:paused}
+@keyframes marquee-ltr{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marquee-rtl{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+.logo-card{flex-shrink:0;width:160px;height:90px;background:var(--surface);border:0.5px solid var(--border);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.4rem;transition:border-color 0.2s,opacity 0.2s;cursor:default;overflow:hidden;opacity:0.75}
+.logo-card:hover{border-color:rgba(0,210,180,0.28);opacity:1}
+.logo-card img{max-width:76%;max-height:52px;object-fit:contain;filter:brightness(0) invert(1)}
+.lc-name{font-family:'Space Grotesk',sans-serif;font-size:0.72rem;font-weight:700;color:var(--soft);text-align:center;padding:0 0.5rem;line-height:1.3}
+.lc-icon{font-size:1.1rem;opacity:0.4;line-height:1}
+
+/* ── PORTFOLIO BOX ── */
+.port-box{background:var(--surface);border:0.5px solid var(--border);border-radius:18px;padding:2.5rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.pstat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.pstat{background:var(--card);border:0.5px solid var(--border);border-radius:11px;padding:1.1rem}
+.pstat-num{font-family:'Space Grotesk',sans-serif;font-size:1.75rem;font-weight:700;line-height:1;margin-bottom:0.25rem}
+.pstat-num.c{color:var(--cyan)}.pstat-num.g{color:var(--gold)}
+.pstat-lbl{font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em}
+
+/* ── TAGS ── */
+.tags{display:flex;flex-wrap:wrap;gap:0.6rem}
+.tag{padding:0.4rem 0.85rem;border:0.5px solid var(--border);border-radius:100px;font-size:0.78rem;color:var(--soft);background:var(--surface);transition:border-color 0.2s,color 0.2s}
+.tag:hover{border-color:rgba(255,255,255,0.22);color:var(--text)}
+
+/* ── PROCESS ── */
+.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+.proc-step{padding:1.25rem;text-align:center;position:relative}
+.proc-step::after{content:'→';position:absolute;right:-8px;top:38%;color:var(--muted);font-size:0.9rem}
+.proc-step:last-child::after{display:none}
+.step-circle{width:42px;height:42px;border-radius:50%;background:var(--cyan-d);border:0.5px solid var(--glow);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--cyan);font-size:0.9rem;margin:0 auto 0.85rem}
+.proc-step h4{font-family:'Space Grotesk',sans-serif;font-size:0.875rem;font-weight:700;margin-bottom:0.35rem}
+.proc-step p{font-size:0.75rem;color:var(--muted);line-height:1.5}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1rem}
+.testi{background:var(--surface);border:0.5px solid var(--border);border-radius:14px;padding:1.5rem;transition:border-color 0.2s;display:flex;flex-direction:column;gap:0}
+.testi:hover{border-color:var(--glow)}
+.stars{display:flex;gap:2px;margin-bottom:0.65rem}
+.star{color:var(--gold);font-size:0.75rem}
+.quote{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;color:var(--cyan);line-height:0.75;margin-bottom:0.65rem;opacity:0.4}
+.testi-text{font-size:0.845rem;color:var(--soft);line-height:1.65;margin-bottom:0.85rem;flex:1}
+.testi-highlight{font-size:0.8rem;font-weight:600;color:var(--cyan);background:var(--cyan-d);border:0.5px solid var(--glow);border-radius:6px;padding:0.35rem 0.7rem;margin-bottom:1rem;line-height:1.4}
+.testi-author{display:flex;align-items:center;gap:0.65rem;margin-top:auto}
+.testi-av{width:36px;height:36px;border-radius:50%;background:var(--cyan-d);border:0.5px solid var(--glow);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--cyan);font-size:0.7rem;flex-shrink:0}
+.testi-name{font-size:0.875rem;font-weight:600}
+.testi-co{font-size:0.7rem;color:var(--muted);line-height:1.35}
+
+/* ── PRICING ── */
+.pricing-wrap{background:var(--deep);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.pricing-note{display:inline-flex;align-items:center;gap:0.4rem;padding:0.3rem 0.8rem;background:var(--gold-d);border:0.5px solid rgba(240,165,0,0.25);border-radius:6px;font-size:0.7rem;color:var(--gold);font-weight:600;margin-top:0.75rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;align-items:stretch}
+.price-card{background:var(--surface);border:0.5px solid var(--border);border-radius:18px;padding:1.75rem 1.5rem;display:flex;flex-direction:column;gap:0;position:relative;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;height:100%}
+.price-card:hover{transform:translateY(-3px)}
+.price-card.featured{border-color:var(--cyan);background:linear-gradient(155deg,rgba(0,210,180,0.08) 0%,var(--surface) 55%);transform:scale(1.03);box-shadow:0 0 0 1px rgba(0,210,180,0.2),0 16px 40px rgba(0,210,180,0.1)}
+.price-card.featured:hover{transform:scale(1.03) translateY(-3px);box-shadow:0 0 0 1px rgba(0,210,180,0.35),0 20px 50px rgba(0,210,180,0.15)}
+.price-card.custom-card{border-color:rgba(240,165,0,0.3);background:linear-gradient(155deg,rgba(240,165,0,0.06) 0%,var(--surface) 55%)}
+.price-card.affiliate-card{border-color:rgba(180,120,255,0.3);background:linear-gradient(155deg,rgba(140,80,255,0.06) 0%,var(--surface) 55%)}
+.price-badge{display:inline-flex;align-items:center;gap:0.35rem;padding:0.22rem 0.65rem;border-radius:6px;font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.1rem;width:fit-content}
+.price-badge.pop{background:var(--cyan-d);color:var(--cyan);border:0.5px solid var(--glow)}
+.price-badge.std{background:rgba(255,255,255,0.05);color:var(--soft);border:0.5px solid var(--border)}
+.price-badge.cst{background:var(--gold-d);color:var(--gold);border:0.5px solid rgba(240,165,0,0.3)}
+.price-badge.aff{background:rgba(140,80,255,0.12);color:#B47FFF;border:0.5px solid rgba(140,80,255,0.3)}
+.price-header{min-height:170px;display:flex;flex-direction:column;justify-content:flex-start}
+.price-plan{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.25rem}
+.price-dur{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.6rem}
+.price-dur .ac{color:var(--cyan)}.price-dur .go{color:var(--gold)}.price-dur .pu{color:#B47FFF}
+.price-amt{display:flex;align-items:baseline;gap:0.2rem;margin-bottom:0.2rem}
+.price-rp{font-size:0.82rem;font-weight:500;color:var(--soft);margin-right:0.05rem}
+.price-num{font-family:'Space Grotesk',sans-serif;font-size:2.3rem;font-weight:700;color:var(--text);line-height:1;letter-spacing:-0.03em}
+.price-num .sub{font-size:1.15rem;font-weight:600;letter-spacing:0}
+.price-num.c{color:var(--cyan)}.price-num.g{color:var(--gold)}.price-num.pu{color:#B47FFF;font-size:1.6rem}
+.price-unit{font-size:0.7rem;color:var(--muted);margin-bottom:0.5rem}
+.price-note{font-size:0.77rem;color:var(--muted);line-height:1.5;margin-top:auto;padding-top:0.4rem}
+.price-divider{width:100%;height:0.5px;background:var(--border);margin:1.2rem 0;flex-shrink:0}
+.benefit-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.4rem;flex:1}
+.benefit-list li{display:flex;align-items:flex-start;gap:0.5rem;font-size:0.8rem;color:var(--soft);line-height:1.45}
+.benefit-list li .chk{width:15px;height:15px;border-radius:4px;background:var(--cyan-d);border:0.5px solid var(--glow);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem}
+.benefit-list li .chk svg{width:8px;height:8px}
+.benefit-list li .chk.g{background:var(--gold-d);border-color:rgba(240,165,0,0.3)}
+.benefit-list li .chk.pu{background:rgba(140,80,255,0.12);border-color:rgba(140,80,255,0.3)}
+.benefit-list li strong{color:var(--text);font-weight:500}
+.benefit-list li.dim{opacity:0.4}
+.benefit-list li.dim .chk{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08)}
+.x-mark{width:8px;height:8px;position:relative;display:block}
+.x-mark::before,.x-mark::after{content:'';position:absolute;top:50%;left:0;width:100%;height:1.5px;background:var(--muted);border-radius:1px}
+.x-mark::before{transform:translateY(-50%) rotate(45deg)}
+.x-mark::after{transform:translateY(-50%) rotate(-45deg)}
+.min-badge{display:inline-flex;align-items:center;gap:0.35rem;padding:0.22rem 0.6rem;background:rgba(140,80,255,0.1);border:0.5px solid rgba(140,80,255,0.22);border-radius:6px;font-size:0.65rem;color:#B47FFF;font-weight:600;margin-bottom:0.75rem;letter-spacing:0.04em}
+.price-cta{margin-top:auto;display:flex;flex-direction:column;gap:0.5rem}
+.price-cta .btn{width:100%;justify-content:center;padding:0.75rem 1rem}
+
+/* ── COCOK UNTUK ── */
+.cocok-wrap{background:var(--surface);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.cocok-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1rem}
+.cocok-card{background:var(--deep);border:0.5px solid var(--border);border-radius:14px;padding:1.4rem 1.25rem;display:flex;align-items:center;gap:0.85rem;transition:border-color 0.2s,transform 0.2s}
+.cocok-card:hover{border-color:var(--glow);transform:translateY(-2px)}
+.cocok-icon{width:44px;height:44px;border-radius:10px;background:var(--cyan-d);border:0.5px solid var(--glow);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.cocok-text h4{font-family:'Space Grotesk',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:0.2rem}
+.cocok-text p{font-size:0.76rem;color:var(--muted);line-height:1.4}
+
+/* ── RISK REVERSAL ── */
+.risk-bar{display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;padding:1.5rem 1.25rem;background:rgba(0,210,180,0.04);border:0.5px solid var(--glow);border-radius:14px;margin-top:2rem}
+.risk-item{display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--soft);font-weight:500}
+.risk-item .ri-icon{color:var(--cyan);font-size:0.9rem}
+
+/* ── CARA KERJA UPDATED ── */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.steps-grid::before{content:'';position:absolute;top:28px;left:calc(12.5%);right:calc(12.5%);height:1px;background:linear-gradient(to right,transparent,var(--border) 20%,var(--border) 80%,transparent);z-index:0}
+.step-box{text-align:center;padding:1.5rem 1rem;position:relative;z-index:1}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--surface);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--muted);font-size:1rem;margin:0 auto 1rem;transition:border-color 0.2s,color 0.2s,background 0.2s}
+.step-box:hover .step-num{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-d)}
+.step-icon{font-size:1.4rem;margin-bottom:0.75rem;display:block}
+.step-box h4{font-family:'Space Grotesk',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:0.35rem;color:var(--text)}
+.step-box p{font-size:0.76rem;color:var(--muted);line-height:1.5}
+.step-box .step-note{display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;padding:0.2rem 0.6rem;background:var(--gold-d);border:0.5px solid rgba(240,165,0,0.25);border-radius:4px;font-size:0.65rem;color:var(--gold);font-weight:600}
+.faq-list{display:flex;flex-direction:column;gap:0.75rem}
+.faq-item{background:var(--surface);border:0.5px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;padding:1.1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:1rem;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:0.875rem;font-weight:600}
+.faq-q:hover{background:rgba(255,255,255,0.02)}
+.faq-arrow{width:20px;height:20px;border-radius:4px;background:var(--card);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.25s,background 0.2s}
+.faq-arrow svg{width:10px;height:10px;fill:none;stroke:var(--muted);stroke-width:1.5;transition:stroke 0.2s}
+.faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--cyan-d);border-color:var(--glow)}
+.faq-item.open .faq-arrow svg{stroke:var(--cyan)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.faq-a p{padding:0 1.25rem 1.1rem;font-size:0.845rem;color:var(--soft);line-height:1.65}
+.faq-item.open .faq-a{max-height:300px}
+
+/* ── CTA ── */
+.cta-wrap{background:var(--surface);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.cta-inner{max-width:1100px;margin:0 auto;padding:4.5rem 1.25rem;text-align:center}
+.cta-btns{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;margin-bottom:2.5rem}
+.cc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1rem}
+.cc-card{background:var(--deep);border:0.5px solid var(--border);border-radius:14px;padding:1.35rem 1rem;text-align:center;text-decoration:none;transition:all 0.2s;display:flex;flex-direction:column;align-items:center;gap:0.6rem}
+.cc-card:hover{transform:translateY(-3px)}
+.cc-card.wa:hover{border-color:rgba(37,211,102,0.4);box-shadow:0 8px 24px rgba(37,211,102,0.1)}
+.cc-card.tt:hover{border-color:rgba(255,255,255,0.18)}
+.cc-card.tg:hover{border-color:rgba(42,171,238,0.4);box-shadow:0 8px 24px rgba(42,171,238,0.1)}
+.cc-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.wa .cc-icon{background:rgba(37,211,102,0.12)}
+.tt .cc-icon{background:rgba(255,255,255,0.06)}
+.tg .cc-icon{background:rgba(42,171,238,0.12)}
+.cc-platform{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted)}
+.cc-value{font-family:'Space Grotesk',sans-serif;font-size:0.875rem;font-weight:700;color:var(--text)}
+.cc-desc{font-size:0.7rem;color:var(--muted)}
+
+footer{background:var(--black);border-top:0.5px solid var(--border);padding:1.75rem 1.25rem;text-align:center}
+.foot-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.02em;color:var(--text);margin-bottom:0.35rem}
+.foot-logo span{color:var(--cyan)}
+footer p{font-size:0.74rem;color:var(--muted);margin-top:0.25rem}
+
+/* ── RESPONSIVE ── */
+
+/* Tablet: 2-col pricing, still comfortable */
+@media(max-width:1024px){
+  .pricing-grid{grid-template-columns:1fr 1fr}
+  .price-card.featured{transform:none;box-shadow:0 0 0 1.5px rgba(0,210,180,0.35),0 8px 24px rgba(0,210,180,0.1)}
+  .price-card.featured:hover{transform:translateY(-3px)}
+  .price-header{min-height:auto}
+}
+
+/* Mobile landscape / small tablet */
+@media(max-width:768px){
+  .pricing-grid{grid-template-columns:1fr 1fr}
+  .video-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+  .testi-grid{grid-template-columns:1fr}
+  .process{grid-template-columns:1fr 1fr}
+  .proc-step::after{display:none}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+}
+
+/* Mobile portrait — main breakpoint */
+@media(max-width:640px){
+  /* Nav */
+  nav{padding:0.75rem 1rem}
+  #navHarga{display:none!important}
+  .nav-logo{font-size:0.95rem}
+  .nav-cta{gap:0.4rem}
+  .nav-portfolio{display:none!important}
+  .nav-cta-text{display:none}
+  .btn-lg{padding:0.75rem 1.25rem;font-size:0.875rem}
+
+  /* Hero */
+  .hero{padding:5.5rem 1rem 3rem;min-height:auto}
+  .hero h1{font-size:1.9rem;letter-spacing:-0.025em}
+  .hero-sub{font-size:0.875rem;max-width:100%}
+  .hero-trust-line{font-size:0.72rem;flex-wrap:wrap;gap:0.3rem 0.6rem}
+  .urgency-pill{font-size:0.65rem;padding:0.25rem 0.7rem}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:0.6rem;width:100%;max-width:340px}
+  .hero-actions .btn-lg{width:100%;justify-content:center}
+  .hero-credibility{font-size:0.7rem}
+  .hero-stats{max-width:100%;border-radius:12px}
+  .hstat-num{font-size:1.2rem}
+  .hstat-lbl{font-size:0.52rem}
+
+  /* Sections */
+  .sec{padding:2.75rem 1rem}
+  .stitle{font-size:1.5rem}
+  .ssub{font-size:0.875rem;max-width:100%}
+  .sec-head{margin-bottom:1.75rem}
+
+  /* Video */
+  .video-grid{grid-template-columns:1fr;gap:0.85rem}
+  .video-card{border-radius:10px}
+  .hero-trust-proof{font-size:0.68rem}
+
+  /* Services */
+  .svc-grid{grid-template-columns:1fr}
+
+  /* Why */
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why-num{font-size:1.5rem}
+
+  /* Logo marquee */
+  .logo-card{width:130px;height:78px}
+  .lc-name{font-size:0.68rem}
+
+  /* Portfolio box */
+  .port-box{grid-template-columns:1fr;gap:1.5rem;padding:1.5rem 1.1rem;border-radius:14px}
+  .pstat-grid{grid-template-columns:1fr 1fr}
+  .pstat-num{font-size:1.5rem}
+
+  /* Process */
+  .process{grid-template-columns:1fr 1fr}
+  .proc-step::after{display:none}
+  .proc-step{padding:1rem 0.75rem}
+
+  /* Testimonials */
+  .testi-grid{grid-template-columns:1fr}
+
+  /* Pricing */
+  .pricing-grid{grid-template-columns:1fr;gap:1rem}
+  .price-card{padding:1.4rem 1.25rem;border-radius:14px}
+  .price-card.featured{transform:none;box-shadow:0 0 0 1.5px rgba(0,210,180,0.4),0 6px 20px rgba(0,210,180,0.1)}
+  .price-header{min-height:auto}
+  .price-num{font-size:2rem}
+  .price-num .sub{font-size:1rem}
+
+  /* FAQ */
+  .faq-q{font-size:0.82rem;padding:1rem 1rem}
+  .faq-a p{font-size:0.8rem;padding:0 1rem 1rem}
+
+  /* CTA */
+  .cta-inner{padding:3rem 1rem}
+  .cta-btns{flex-direction:column;align-items:stretch;max-width:340px;margin-left:auto;margin-right:auto}
+  .cta-btns .btn-lg{width:100%;justify-content:center}
+  .cc-grid{grid-template-columns:1fr}
+
+  /* Tags */
+  .tags{gap:0.5rem}
+  .tag{font-size:0.74rem;padding:0.35rem 0.75rem}
+}
+
+/* Very small phones */
+@media(max-width:380px){
+  .hero h1{font-size:1.7rem}
+  .why-grid{grid-template-columns:1fr}
+  .logo-card{width:115px;height:72px}
+  .pricing-grid{grid-template-columns:1fr}
+  .hero-stats .hero-stat{padding:0.85rem 0.4rem}
+  .hstat-num{font-size:1.1rem}
+  .hstat-lbl{font-size:0.5rem}
+  .steps-grid{grid-template-columns:1fr}
+  .steps-grid::before{display:none}
+}
+
+/* Steps grid tablet/mobile */
+@media(max-width:768px){
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .steps-grid::before{display:none}
+  .cocok-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .steps-grid::before{display:none}
+  .step-box{padding:1.1rem 0.75rem}
+  .cocok-grid{grid-template-columns:1fr}
+  .risk-bar{flex-direction:column;align-items:flex-start;gap:0.6rem;padding:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="ico-wa" viewBox="0 0 24 24"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+    <symbol id="ico-tt" viewBox="0 0 24 24"><path fill="#fff" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/></symbol>
+    <symbol id="ico-tg" viewBox="0 0 24 24"><path fill="#fff" d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Fahmi<span>Hza</span></a>
+  <div class="nav-cta">
+    <a href="#harga" class="btn btn-outline nav-harga" style="display:none" id="navHarga">Harga</a>
+    <a href="https://t.me/fahmihzaaivideo" target="_blank" class="btn btn-outline nav-portfolio">Portfolio</a>
+    <a href="https://wa.me/6283165103631?text=Halo%20FahmiHza,%20saya%20tertarik%20memulai%20project%20Video%20AI.%20Bisa%20dibantu%3F" target="_blank" class="btn btn-primary">
+      <svg width="14" height="14"><use href="#ico-wa"/></svg><span class="nav-cta-text">Mulai Project</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-glow-1"></div><div class="hero-glow-2"></div>
+  <div class="hero-badge"><div class="dot"></div>Video AI Profesional Indonesia</div>
+
+  <h1>Konten Sepi? Ubah Jadi <span class="ac">Video AI</span><br>yang Bikin Orang Berhenti Scroll<br>&amp; <span class="go">Lebih Cepat Closing</span></h1>
+
+  <p class="hero-sub">Hasilkan video sinematik profesional berbasis AI — lebih cepat, lebih hemat, dan terbukti meningkatkan kepercayaan klien serta konversi bisnis Anda.</p>
+
+  <div class="hero-trust-line">
+    <span>✓ Tanpa syuting</span><div class="ht-dot"></div>
+    <span>✓ Siap dalam 1–3 hari</span><div class="ht-dot"></div>
+    <span>✓ Mulai Rp 75.000</span>
+  </div>
+
+  <div class="urgency-pill"><div class="up-dot"></div>⚡ Slot produksi terbatas tiap minggu</div>
+
+  <div class="hero-actions">
+    <a href="https://wa.me/6283165103631?text=Halo%20FahmiHza,%20saya%20mau%20diskusi%20konsep%20Video%20AI%20untuk%20bisnis%20saya." target="_blank" class="btn btn-wa btn-lg">
+      <svg width="17" height="17"><use href="#ico-wa"/></svg>Diskusi Konsep Video Gratis
+    </a>
+    <a href="#video-proof" class="btn btn-outline btn-lg">▶ Lihat Hasil Video</a>
+  </div>
+
+  <div class="hero-credibility">🏆 Dipercaya <span>100+ klien</span> — dari UMKM hingga perusahaan nasional &amp; industri</div>
+  <div class="hero-trust-proof">Dipercaya oleh puluhan bisnis untuk meningkatkan performa konten mereka</div>
+
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hstat-num" style="color:var(--cyan)">100+</div><div class="hstat-lbl">Proyek</div></div>
+    <div class="hero-stat"><div class="hstat-num" style="color:var(--cyan)">4+</div><div class="hstat-lbl">Tahun</div></div>
+    <div class="hero-stat"><div class="hstat-num" style="color:var(--gold)">PRO</div><div class="hstat-lbl">Korporat</div></div>
+    <div class="hero-stat"><div class="hstat-num" style="color:var(--cyan)">5★</div><div class="hstat-lbl">Rating</div></div>
+  </div>
+</div>
+
+<!-- ── VIDEO PROOF — immediately after hero ── -->
+<div class="video-wrap" id="video-proof">
+  <div class="sec">
+    <div class="sec-head">
+      <div class="stag">Hasil Nyata</div>
+      <h2 class="stitle">Lihat Hasil Nyata<br>Video Kami</h2>
+      <p class="ssub">Beberapa contoh video promosi yang telah membantu meningkatkan engagement dan penjualan klien kami.</p>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_1"
+          title="Video Portfolio 1 — FahmiHza AI Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy">
+        </iframe>
+        <div class="video-label">Company Profile · AI Cinematic</div>
+      </div>
+
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_2"
+          title="Video Portfolio 2 — FahmiHza AI Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy">
+        </iframe>
+        <div class="video-label">Promosi Produk · 30 Detik</div>
+      </div>
+
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_3"
+          title="Video Portfolio 3 — FahmiHza AI Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy">
+        </iframe>
+        <div class="video-label">Industri &amp; Manufaktur</div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="https://t.me/fahmihzaaivideo" target="_blank" class="btn btn-tg btn-lg">
+        <svg width="16" height="16"><use href="#ico-tg"/></svg>Lihat 100+ Video Lainnya di Telegram
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-lbl">Dipercaya oleh</span>
+    <div class="trust-items">
+      <div class="trust-item">🏭 Perusahaan Industri</div>
+      <div class="trust-item">🏢 PT &amp; CV</div>
+      <div class="trust-item">🛒 UMKM &amp; Startup</div>
+      <div class="trust-item">📱 Brand Digital</div>
+      <div class="trust-item">🏗️ Infrastruktur</div>
+      <div class="trust-item">⛏️ Pertambangan</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<div class="sec" id="layanan">
+  <div class="sec-head">
+    <div class="stag">Layanan</div>
+    <h2 class="stitle">Semua Jenis Video<br>Ada di Sini</h2>
+    <p class="ssub">Teknologi AI kami menghasilkan video berkualitas sinema — lebih cepat, lebih efisien.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc"><div class="svc-icon">🎬</div><h3>Video Company Profile</h3><p>Tampilkan wajah profesional perusahaan Anda. Cocok untuk korporat, PT, startup, dan bisnis yang ingin membangun kepercayaan klien.</p></div>
+    <div class="svc"><div class="svc-icon g">📦</div><h3>Video Promosi Produk</h3><p>Buat produk tampak premium dengan visual AI yang menawan. Meningkatkan konversi dan brand awareness secara signifikan.</p></div>
+    <div class="svc"><div class="svc-icon">📱</div><h3>Video Iklan Media Sosial</h3><p>Konten untuk Instagram Reels, TikTok, YouTube Shorts — dioptimalkan untuk viral dan engagement tinggi.</p></div>
+    <div class="svc"><div class="svc-icon g">🎤</div><h3>Video Presentasi &amp; Pitching</h3><p>Video profesional untuk investor, laporan tahunan, atau proposal bisnis yang berkesan.</p></div>
+    <div class="svc"><div class="svc-icon">⚙️</div><h3>Video Industri &amp; Manufaktur</h3><p>Dokumentasi operasional, safety video, dan profil industri berat dengan sentuhan sinematik AI.</p></div>
+    <div class="svc"><div class="svc-icon g">✨</div><h3>Custom AI Video</h3><p>Kebutuhan unik? Kami kerjakan sesuai brief Anda. Konsultasi gratis untuk membahas konsep.</p></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHY -->
+<div class="sec" id="keunggulan">
+  <div class="sec-head">
+    <div class="stag">Keunggulan</div>
+    <h2 class="stitle">Kenapa Pilih<br>FahmiHza?</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-num">100+</div><h4>Proyek Terdokumentasi</h4><p>Portfolio lengkap dari UMKM hingga perusahaan nasional. Cek langsung di Telegram.</p></div>
+    <div class="why-card"><div class="why-num">AI</div><h4>Teknologi Terkini</h4><p>Tools AI generatif terbaru untuk hasil visual yang melampaui produksi konvensional.</p></div>
+    <div class="why-card"><div class="why-num">⚡</div><h4>Cepat &amp; Efisien</h4><p>Produksi berbasis AI jauh lebih cepat dari metode tradisional tanpa mengorbankan kualitas.</p></div>
+    <div class="why-card"><div class="why-num">🏆</div><h4>Klien Korporat Terbukti</h4><p>Dipercaya perusahaan-perusahaan besar nasional — kualitas kami setara enterprise.</p></div>
+  </div>
+</div>
+
+<!-- CLIENT LOGOS — dual row -->
+<div class="logos-wrap">
+  <div class="logos-head">
+    <div class="stag">Klien Kami</div>
+    <h2 class="stitle" style="margin-bottom:0.15rem">Dipercaya Perusahaan<br>Terkemuka Indonesia</h2>
+  </div>
+
+  <!-- Row 1: left → -->
+  <div class="marquee-track" style="margin-bottom:0.75rem">
+    <div class="marquee-inner marquee-ltr" id="marqueeInner">
+      <div class="logo-card"><div class="lc-icon">🏭</div><div class="lc-name">PT Astemo</div></div>
+      <div class="logo-card"><div class="lc-icon">📡</div><div class="lc-name">Infomedia Telkom</div></div>
+      <div class="logo-card"><div class="lc-icon">⛏️</div><div class="lc-name">PT Indexim</div></div>
+      <div class="logo-card"><div class="lc-icon">🌾</div><div class="lc-name">Bulog</div></div>
+      <div class="logo-card"><div class="lc-icon">🏗️</div><div class="lc-name">Infrastruktur Nasional</div></div>
+      <div class="logo-card"><div class="lc-icon">🏢</div><div class="lc-name">Perusahaan Industri</div></div>
+      <div class="logo-card"><div class="lc-icon">🚀</div><div class="lc-name">Brand Digital</div></div>
+      <div class="logo-card"><div class="lc-icon">🏨</div><div class="lc-name">Properti &amp; Hotel</div></div>
+      <div class="logo-card"><div class="lc-icon">💊</div><div class="lc-name">Kesehatan &amp; Klinik</div></div>
+      <div class="logo-card"><div class="lc-icon">📦</div><div class="lc-name">Manufaktur Nasional</div></div>
+      <!-- duplicate for seamless loop -->
+      <div class="logo-card"><div class="lc-icon">🏭</div><div class="lc-name">PT Astemo</div></div>
+      <div class="logo-card"><div class="lc-icon">📡</div><div class="lc-name">Infomedia Telkom</div></div>
+      <div class="logo-card"><div class="lc-icon">⛏️</div><div class="lc-name">PT Indexim</div></div>
+      <div class="logo-card"><div class="lc-icon">🌾</div><div class="lc-name">Bulog</div></div>
+      <div class="logo-card"><div class="lc-icon">🏗️</div><div class="lc-name">Infrastruktur Nasional</div></div>
+      <div class="logo-card"><div class="lc-icon">🏢</div><div class="lc-name">Perusahaan Industri</div></div>
+      <div class="logo-card"><div class="lc-icon">🚀</div><div class="lc-name">Brand Digital</div></div>
+      <div class="logo-card"><div class="lc-icon">🏨</div><div class="lc-name">Properti &amp; Hotel</div></div>
+      <div class="logo-card"><div class="lc-icon">💊</div><div class="lc-name">Kesehatan &amp; Klinik</div></div>
+      <div class="logo-card"><div class="lc-icon">📦</div><div class="lc-name">Manufaktur Nasional</div></div>
+    </div>
+  </div>
+
+  <!-- Row 2: right ← -->
+  <div class="marquee-track">
+    <div class="marquee-inner marquee-rtl">
+      <div class="logo-card"><div class="lc-icon">🛒</div><div class="lc-name">E-commerce &amp; Retail</div></div>
+      <div class="logo-card"><div class="lc-icon">🍔</div><div class="lc-name">F&amp;B &amp; Kuliner</div></div>
+      <div class="logo-card"><div class="lc-icon">📚</div><div class="lc-name">Pendidikan &amp; Kursus</div></div>
+      <div class="logo-card"><div class="lc-icon">💄</div><div class="lc-name">Beauty &amp; Fashion</div></div>
+      <div class="logo-card"><div class="lc-icon">🏦</div><div class="lc-name">Keuangan &amp; Fintech</div></div>
+      <div class="logo-card"><div class="lc-icon">🎯</div><div class="lc-name">Startup &amp; Tech</div></div>
+      <div class="logo-card"><div class="lc-icon">🚗</div><div class="lc-name">Otomotif &amp; Dealer</div></div>
+      <div class="logo-card"><div class="lc-icon">🏗️</div><div class="lc-name">Konstruksi &amp; Properti</div></div>
+      <div class="logo-card"><div class="lc-icon">🎬</div><div class="lc-name">Agency &amp; Creative</div></div>
+      <div class="logo-card"><div class="lc-icon">📱</div><div class="lc-name">Brand Nasional</div></div>
+      <!-- duplicate for seamless loop -->
+      <div class="logo-card"><div class="lc-icon">🛒</div><div class="lc-name">E-commerce &amp; Retail</div></div>
+      <div class="logo-card"><div class="lc-icon">🍔</div><div class="lc-name">F&amp;B &amp; Kuliner</div></div>
+      <div class="logo-card"><div class="lc-icon">📚</div><div class="lc-name">Pendidikan &amp; Kursus</div></div>
+      <div class="logo-card"><div class="lc-icon">💄</div><div class="lc-name">Beauty &amp; Fashion</div></div>
+      <div class="logo-card"><div class="lc-icon">🏦</div><div class="lc-name">Keuangan &amp; Fintech</div></div>
+      <div class="logo-card"><div class="lc-icon">🎯</div><div class="lc-name">Startup &amp; Tech</div></div>
+      <div class="logo-card"><div class="lc-icon">🚗</div><div class="lc-name">Otomotif &amp; Dealer</div></div>
+      <div class="logo-card"><div class="lc-icon">🏗️</div><div class="lc-name">Konstruksi &amp; Properti</div></div>
+      <div class="logo-card"><div class="lc-icon">🎬</div><div class="lc-name">Agency &amp; Creative</div></div>
+      <div class="logo-card"><div class="lc-icon">📱</div><div class="lc-name">Brand Nasional</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PORTFOLIO -->
+<div class="sec" id="portfolio">
+  <div class="port-box">
+    <div>
+      <div class="stag">Portfolio</div>
+      <h2 class="stitle">100+ Karya Nyata<br>Bisa Anda Buktikan</h2>
+      <p class="ssub" style="margin-bottom:1.5rem">Bukan sekadar klaim. Seluruh portfolio bisa diakses langsung — dari UMKM hingga klien korporat nasional.</p>
+      <a href="https://t.me/fahmihzaaivideo" target="_blank" class="btn btn-tg btn-lg"><svg width="16" height="16"><use href="#ico-tg"/></svg>Akses Semua Portfolio</a>
+    </div>
+    <div class="pstat-grid">
+      <div class="pstat"><div class="pstat-num c">100+</div><div class="pstat-lbl">Total Proyek</div></div>
+      <div class="pstat"><div class="pstat-num g">PRO</div><div class="pstat-lbl">Klien Korporat</div></div>
+      <div class="pstat"><div class="pstat-num c">1–3</div><div class="pstat-lbl">Hari Selesai</div></div>
+      <div class="pstat"><div class="pstat-num g">5★</div><div class="pstat-lbl">Rating Klien</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SEGMEN -->
+<div class="sec" id="segmen">
+  <div class="sec-head">
+    <div class="stag">Segmen</div>
+    <h2 class="stitle">Melayani Semua Skala<br>Bisnis di Indonesia</h2>
+  </div>
+  <div class="tags">
+    <div class="tag">🏭 Perusahaan Industri</div><div class="tag">⛏️ Pertambangan</div>
+    <div class="tag">🏢 PT &amp; CV</div><div class="tag">🛒 E-commerce</div>
+    <div class="tag">🍔 F&amp;B &amp; Kuliner</div><div class="tag">🏨 Hotel &amp; Properti</div>
+    <div class="tag">💊 Kesehatan</div><div class="tag">📚 Pendidikan</div>
+    <div class="tag">🚀 Startup &amp; Tech</div><div class="tag">💄 Beauty &amp; Fashion</div>
+    <div class="tag">🏗️ Konstruksi</div><div class="tag">📦 Manufaktur</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROCESS — updated -->
+<div class="sec" id="proses">
+  <div class="sec-head">
+    <div class="stag">Cara Kerja</div>
+    <h2 class="stitle">Cara Kerja Kami —<br>Mudah &amp; Transparan</h2>
+    <p class="ssub">Dari konsep hingga video final, prosesnya sederhana dan selalu ada komunikasi di setiap tahap.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-box">
+      <span class="step-icon">💬</span>
+      <div class="step-num">01</div>
+      <h4>Konsultasi Konsep</h4>
+      <p>Chat gratis via WhatsApp. Ceritakan bisnis, produk, dan tujuan video Anda. Kami bantu tentukan konsep terbaik.</p>
+    </div>
+    <div class="step-box">
+      <span class="step-icon">🎬</span>
+      <div class="step-num">02</div>
+      <h4>Produksi Video AI</h4>
+      <p>Tim kami memulai produksi menggunakan teknologi AI generatif terkini sesuai brief dan konsep yang disepakati.</p>
+    </div>
+    <div class="step-box">
+      <span class="step-icon">🔒</span>
+      <div class="step-num">03</div>
+      <h4>DP &amp; Kunci Jadwal</h4>
+      <p>DP minimal 75% untuk mengunci jadwal produksi dan memastikan slot Anda terjamin di minggu tersebut.</p>
+      <span class="step-note">⚡ Slot terbatas tiap minggu</span>
+    </div>
+    <div class="step-box">
+      <span class="step-icon">✅</span>
+      <div class="step-num">04</div>
+      <h4>Revisi &amp; Finalisasi</h4>
+      <p>Preview video dikirim. Revisi dilakukan hingga sesuai ekspektasi, lalu file HD final dikirimkan siap pakai.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIALS -->
+<div class="sec" id="testimoni">
+  <div class="sec-head">
+    <div class="stag">Testimoni</div>
+    <h2 class="stitle">Klien Bicara,<br>Bukan Kami</h2>
+    <p class="ssub">Kepercayaan 100+ klien adalah bukti terkuat yang bisa kami tunjukkan.</p>
+  </div>
+  <div class="testi-grid">
+
+    <div class="testi">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="quote">"</div>
+      <p class="testi-text">Video company profile kami jauh melampaui ekspektasi. Kualitasnya setara produksi studio besar, prosesnya cepat dan harganya sangat worth it.</p>
+      <div class="testi-highlight">✓ Klien kami langsung notice perbedaannya setelah video ini tayang</div>
+      <div class="testi-author">
+        <div class="testi-av">HM</div>
+        <div><div class="testi-name">Hendra M.</div><div class="testi-co">Manajer Marketing · Perusahaan Manufaktur Nasional</div></div>
+      </div>
+    </div>
+
+    <div class="testi">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="quote">"</div>
+      <p class="testi-text">Sebagai UMKM, saya tidak menyangka bisa punya video promosi sekualitas brand besar. FahmiHza memberikan hasil profesional dengan budget yang sangat terjangkau.</p>
+      <div class="testi-highlight">✓ Penjualan naik signifikan dalam 2 minggu setelah video dipakai</div>
+      <div class="testi-author">
+        <div class="testi-av">SA</div>
+        <div><div class="testi-name">Sari A.</div><div class="testi-co">Owner · UMKM Kuliner Jakarta</div></div>
+      </div>
+    </div>
+
+    <div class="testi">
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <div class="quote">"</div>
+      <p class="testi-text">Kami butuh video presentasi untuk pitching investor. Hasilnya sangat sinematik dan profesional. Tim investor langsung terkesan. Highly recommended untuk bisnis serius!</p>
+      <div class="testi-highlight">✓ Berhasil close investor setelah presentasi dengan video ini</div>
+      <div class="testi-author">
+        <div class="testi-av">RD</div>
+        <div><div class="testi-name">Rizal D.</div><div class="testi-co">CEO · Startup Teknologi Indonesia</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- COCOK UNTUK -->
+<div class="cocok-wrap">
+  <div class="sec">
+    <div class="sec-head">
+      <div class="stag">Untuk Siapa</div>
+      <h2 class="stitle">Video AI Ini<br>Cocok Untuk Anda?</h2>
+      <p class="ssub">Kami melayani semua segmen bisnis yang ingin tampil lebih profesional dan meningkatkan penjualan.</p>
+    </div>
+    <div class="cocok-grid">
+      <div class="cocok-card">
+        <div class="cocok-icon">🛒</div>
+        <div class="cocok-text"><h4>UMKM &amp; Toko Online</h4><p>Promosikan produk dengan video yang menarik tanpa biaya produksi mahal</p></div>
+      </div>
+      <div class="cocok-card">
+        <div class="cocok-icon">🍔</div>
+        <div class="cocok-text"><h4>Bisnis Kuliner &amp; F&amp;B</h4><p>Tampilkan menu dan suasana restoran / kafe Anda dalam visual yang menggugah</p></div>
+      </div>
+      <div class="cocok-card">
+        <div class="cocok-icon">💄</div>
+        <div class="cocok-text"><h4>Brand Produk</h4><p>Branding produk lebih kuat dengan video sinematik yang meningkatkan perceived value</p></div>
+      </div>
+      <div class="cocok-card">
+        <div class="cocok-icon">🎯</div>
+        <div class="cocok-text"><h4>Agency &amp; Marketing Team</h4><p>Produksi konten klien lebih cepat dan efisien dengan teknologi AI generatif</p></div>
+      </div>
+      <div class="cocok-card">
+        <div class="cocok-icon">🏢</div>
+        <div class="cocok-text"><h4>Perusahaan &amp; Korporat</h4><p>Company profile, video presentasi, dan konten internal berkualitas enterprise</p></div>
+      </div>
+      <div class="cocok-card">
+        <div class="cocok-icon">📱</div>
+        <div class="cocok-text"><h4>Kreator &amp; Reseller</h4><p>Konten serial untuk affiliate, endorsement, atau produk Anda sendiri</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<div class="pricing-wrap" id="harga">
+  <div class="sec">
+    <div class="sec-head">
+      <div class="stag">Harga</div>
+      <h2 class="stitle">Transparan, Terjangkau,<br>Tanpa Biaya Tersembunyi</h2>
+      <p class="ssub">Pilih paket sesuai kebutuhan bisnis Anda. Semua paket sudah termasuk benefit lengkap.</p>
+      <div class="pricing-note">⚠️ Harga promo terbatas — dapat berubah sewaktu-waktu</div>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- BASIC 30s -->
+      <div class="price-card">
+        <div class="price-badge std">Starter</div>
+        <div class="price-header">
+          <div class="price-plan">Paket Basic</div>
+          <div class="price-dur"><span class="ac">30</span> Detik</div>
+          <div class="price-amt"><span class="price-rp">Rp</span><span class="price-num">190<span class="sub">.000</span></span></div>
+          <div class="price-unit">per video</div>
+          <div style="height:1.7rem"></div>
+          <div class="price-note">Ideal untuk konten media sosial, iklan produk singkat, atau teaser bisnis.</div>
+        </div>
+        <div class="price-divider"></div>
+        <ul class="benefit-list">
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Durasi <strong>30 detik</strong> video AI</span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>1x revisi</strong> gratis</span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Pilihan <strong>tema video</strong> (modern / cinematic / minimal)</span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Input <strong>teks &amp; narasi</strong> custom</span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Format <strong>landscape / portrait / square</strong></span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>File <strong>HD MP4</strong> siap upload</span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Selesai <strong>1–2 hari kerja</strong></span></li>
+          <li class="dim"><div class="chk"><span class="x-mark"></span></div><span>Custom karakter tidak termasuk</span></li>
+        </ul>
+        <div class="price-cta">
+          <a href="https://wa.me/6283165103631?text=Halo%20FahmiHza,%20saya%20mau%20order%20Paket%20Basic%2030%20detik%20Rp190.000." target="_blank" class="btn btn-primary">
+            <svg width="15" height="15"><use href="#ico-wa"/></svg>Order Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- STANDARD 60s FEATURED -->
+      <div class="price-card featured">
+        <div class="price-badge pop">⚡ Paling Populer</div>
+        <div class="price-header">
+          <div class="price-plan">Paket Standard</div>
+          <div class="price-dur"><span class="ac">60</span> Detik</div>
+          <div class="price-amt"><span class="price-rp">Rp</span><span class="price-num c">290<span class="sub">.000</span></span></div>
+          <div class="price-unit">per video</div>
+          <div style="height:1.7rem"></div>
+          <div class="price-note">Cocok untuk company profile singkat, promosi produk, dan kampanye digital.</div>
+        </div>
+        <div class="price-divider"></div>
+        <ul class="benefit-list">
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Durasi <strong>60 detik</strong> video AI</span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>1x revisi</strong> gratis</span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Pilihan <strong>tema video</strong> lebih variatif</span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>Custom karakter AI</strong> (persona, wajah, style)</span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Input <strong>teks, narasi &amp; voice over</strong></span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Format <strong>landscape / portrait / square</strong></span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>Musik latar</strong> sesuai mood brand</span></li>
+          <li><div class="chk"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#00D2B4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Selesai <strong>2–3 hari kerja</strong></span></li>
+        </ul>
+        <div class="price-cta">
+          <a href="https://wa.me/6283165103631?text=Halo%20FahmiHza,%20saya%20mau%20order%20Paket%20Standard%2060%20detik%20Rp290.000." target="_blank" class="btn btn-primary">
+            <svg width="15" height="15"><use href="#ico-wa"/></svg>Order Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- CUSTOM -->
+      <div class="price-card custom-card">
+        <div class="price-badge cst">✦ Premium</div>
+        <div class="price-header">
+          <div class="price-plan">Paket Custom</div>
+          <div class="price-dur"><span class="go">Durasi Bebas</span></div>
+          <div class="price-amt"><span class="price-num g" style="font-size:1.5rem;line-height:1.15">Hubungi<br>Kami</span></div>
+          <div class="price-unit">harga menyesuaikan brief</div>
+          <div style="height:1.7rem"></div>
+          <div class="price-note">Untuk korporat, BUMN, industri, atau kebutuhan durasi &amp; brief khusus di luar paket standar.</div>
+        </div>
+        <div class="price-divider"></div>
+        <ul class="benefit-list">
+          <li><div class="chk g"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#F0A500" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>Durasi bebas</strong> (2 mnt, 3 mnt, dst)</span></li>
+          <li><div class="chk g"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#F0A500" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>Revisi multiple</strong> hingga puas</span></li>
+          <li><div class="chk g"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#F0A500" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Custom karakter &amp; <strong>branding penuh</strong></span></li>
+          <li><div class="chk g"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#F0A500" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>Storyboard &amp; konsep</strong> bersama</span></li>
+          <li><div class="chk g"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#F0A500" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>Voice over profesional</strong> (ID / EN)</span></li>
+          <li><div class="chk g"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#F0A500" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><strong>Subtitle &amp; caption</strong> siap pakai</span></li>
+          <li><div class="chk g"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#F0A500" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Prioritas &amp; <strong>dedicated support</strong></span></li>
+          <li><div class="chk g"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#F0A500" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Cocok untuk <strong>BUMN &amp; korporat</strong></span></li>
+        </ul>
+        <div class="price-cta">
+          <a href="https://wa.me/6283165103631?text=Halo%20FahmiHza,%20saya%20ingin%20diskusi%20Paket%20Custom%20Video%20AI." target="_blank" class="btn btn-wa">
+            <svg width="15" height="15"><use href="#ico-wa"/></svg>Diskusi Kebutuhan
+          </a>
+        </div>
+      </div>
+
+      <!-- AFFILIATE 14s — LAST -->
+      <div class="price-card affiliate-card">
+        <div class="price-badge aff">◈ Affiliate</div>
+        <div class="price-header">
+          <div class="price-plan">Paket Affiliate</div>
+          <div class="price-dur"><span class="pu">14</span> Detik</div>
+          <div class="price-amt"><span class="price-rp">Rp</span><span class="price-num pu">75<span class="sub">.000</span></span></div>
+          <div class="price-unit">per video</div>
+          <div class="min-badge">⚡ Min. order 3 video</div>
+          <div class="price-note">Paket hemat untuk konten serial singkat. Cocok untuk reseller, kreator konten, dan promosi berkala.</div>
+        </div>
+        <div class="price-divider"></div>
+        <ul class="benefit-list">
+          <li><div class="chk pu"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#B47FFF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Durasi <strong>14 detik</strong> per video</span></li>
+          <li><div class="chk pu"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#B47FFF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Maksimal <strong>2 scene</strong> per video</span></li>
+          <li><div class="chk pu"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#B47FFF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Min. order <strong>3 video</strong> sekaligus</span></li>
+          <li><div class="chk pu"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#B47FFF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Input <strong>teks narasi</strong> custom</span></li>
+          <li><div class="chk pu"><svg viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#B47FFF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Format <strong>portrait 9:16</strong> siap upload</span></li>
+          <li class="dim"><div class="chk"><span class="x-mark"></span></div><span>Revisi tidak termasuk</span></li>
+          <li class="dim"><div class="chk"><span class="x-mark"></span></div><span>Custom karakter tidak termasuk</span></li>
+        </ul>
+        <div class="price-cta">
+          <a href="https://wa.me/6283165103631?text=Halo%20FahmiHza,%20saya%20mau%20order%20Paket%20Affiliate%2014%20detik%20(min%203%20video)%20%40Rp75.000." target="_blank" class="btn btn-outline" style="border-color:rgba(140,80,255,0.4);color:#B47FFF">
+            <svg width="15" height="15"><use href="#ico-wa"/></svg>Order 3 Video
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Risk Reversal -->
+    <div class="risk-bar">
+      <div class="risk-item"><span class="ri-icon">✓</span>Revisi hingga sesuai kebutuhan</div>
+      <div class="risk-item"><span class="ri-icon">✓</span>Kami pastikan hasil sesuai brief Anda</div>
+      <div class="risk-item"><span class="ri-icon">✓</span>Konsultasi gratis sebelum order</div>
+      <div class="risk-item"><span class="ri-icon">✓</span>File HD siap pakai semua platform</div>
+      <div class="risk-item"><span class="ri-icon">✓</span>Proses cepat 1–3 hari kerja</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<div class="sec" id="faq">
+  <div class="sec-head">
+    <div class="stag">FAQ</div>
+    <h2 class="stitle">Pertanyaan yang<br>Sering Ditanyakan</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Apakah video AI terlihat profesional dan natural?
+        <span class="faq-arrow"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Ya. Teknologi AI generatif yang kami gunakan menghasilkan visual sinematik berkualitas tinggi. Sudah dipercaya oleh 100+ klien dari UMKM hingga perusahaan nasional — hasilnya setara produksi studio profesional.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Apa yang perlu disiapkan untuk order?
+        <span class="faq-arrow"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Cukup kirim brief singkat: nama bisnis, produk/layanan, tujuan video, dan referensi gaya visual (jika ada). Kami yang handle sisanya — konsep, produksi, hingga finishing.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Bagaimana sistem revisi?
+        <span class="faq-arrow"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Setiap paket Basic dan Standard sudah termasuk 1x revisi gratis setelah preview pertama. Paket Custom mendapat revisi multiple hingga hasil sesuai ekspektasi. Revisi tambahan di luar paket bisa didiskusikan.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Format file apa yang dikirim?
+        <span class="faq-arrow"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Video dikirim dalam format MP4 resolusi HD (1080p), siap upload ke Instagram, TikTok, YouTube, atau platform lainnya. Anda juga bisa request format atau rasio aspek tertentu (16:9, 9:16, 1:1).</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Apakah bisa pakai logo dan warna brand saya?
+        <span class="faq-arrow"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Tentu. Anda cukup kirimkan aset brand (logo, warna, font jika ada) dan kami akan integrasikan ke dalam video sehingga tampil konsisten dengan identitas bisnis Anda.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Berapa lama waktu pengerjaan?
+        <span class="faq-arrow"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Paket Basic (30 detik) selesai dalam 1–2 hari kerja. Paket Standard (60 detik) 2–3 hari kerja. Paket Custom bervariasi tergantung durasi dan kompleksitas brief, namun biasanya 3–5 hari kerja. Pengerjaan dimulai setelah DP diterima.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Apakah hasilnya bisa custom sesuai brand saya?
+        <span class="faq-arrow"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Ya, sepenuhnya custom. Mulai dari warna, font, musik latar, narasi, karakter AI, hingga mood video — semua disesuaikan dengan identitas dan kebutuhan brand Anda. Anda cukup kirimkan brief dan aset yang dibutuhkan.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Apakah video AI terlihat natural dan tidak kaku?
+        <span class="faq-arrow"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Sangat natural. Kami menggunakan model AI generatif terbaru yang menghasilkan visual sinematik, gerakan yang smooth, dan estetika setara produksi profesional. Lihat sendiri di portfolio kami — 100+ video nyata yang sudah dipakai klien.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Bagaimana cara pembayaran?
+        <span class="faq-arrow"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Pembayaran dilakukan di awal (DP 50%) sebelum produksi dimulai, dan pelunasan setelah preview disetujui. Transfer ke rekening yang akan dikirim via WhatsApp. Paket Custom bisa didiskusikan skema pembayarannya.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CTA FINAL -->
+<div class="cta-wrap">
+  <div class="cta-inner">
+    <div class="stag" style="display:flex;justify-content:center">Mulai Sekarang</div>
+    <h2 class="stitle">Siap Tingkatkan Engagement<br>&amp; Penjualan dengan<br><span style="color:var(--cyan)">Video AI?</span></h2>
+    <p class="ssub" style="margin:0 auto;text-align:center">Konsultasi gratis, tanpa biaya apapun. Diskusikan konsep video Anda dan kami siap mewujudkannya.</p>
+    <div style="display:flex;justify-content:center;margin-top:1rem">
+      <div class="urgency-pill"><div class="up-dot"></div>⚡ Slot terbatas — hubungi sekarang sebelum penuh</div>
+    </div>
+    <div class="cta-btns">
+      <a href="https://wa.me/6283165103631?text=Halo%20FahmiHza,%20saya%20mau%20Mulai%20Project%20Video%20AI%20untuk%20bisnis%20saya.%20Bisa%20dibantu%3F" target="_blank" class="btn btn-wa btn-lg"><svg width="18" height="18"><use href="#ico-wa"/></svg>Mulai Project Sekarang</a>
+      <a href="https://www.tiktok.com/@fahmihza" target="_blank" class="btn btn-tt btn-lg"><svg width="18" height="18"><use href="#ico-tt"/></svg>TikTok @fahmihza</a>
+      <a href="https://t.me/fahmihzaaivideo" target="_blank" class="btn btn-tg btn-lg"><svg width="18" height="18"><use href="#ico-tg"/></svg>Portfolio Telegram</a>
+    </div>
+    <div class="cc-grid">
+      <a href="https://wa.me/6283165103631?text=Halo%20FahmiHza,%20saya%20ingin%20mulai%20project%20Video%20AI." target="_blank" class="cc-card wa">
+        <div class="cc-icon"><svg width="26" height="26"><use href="#ico-wa"/></svg></div>
+        <div class="cc-platform">WhatsApp</div><div class="cc-value">0831-6510-3631</div><div class="cc-desc">Konsultasi &amp; Order</div>
+      </a>
+      <a href="https://www.tiktok.com/@fahmihza" target="_blank" class="cc-card tt">
+        <div class="cc-icon"><svg width="26" height="26"><use href="#ico-tt"/></svg></div>
+        <div class="cc-platform">TikTok</div><div class="cc-value">@fahmihza</div><div class="cc-desc">Behind the Scenes</div>
+      </a>
+      <a href="https://t.me/fahmihzaaivideo" target="_blank" class="cc-card tg">
+        <div class="cc-icon"><svg width="26" height="26"><use href="#ico-tg"/></svg></div>
+        <div class="cc-platform">Telegram</div><div class="cc-value">@fahmihzaaivideo</div><div class="cc-desc">100+ Portfolio Lengkap</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-logo">Fahmi<span>Hza</span></div>
+  <p>Jasa Video AI Profesional Indonesia</p>
+  <p style="margin-top:0.75rem">© 2025 FahmiHza · Dibuat dengan ❤️ dan kecerdasan buatan</p>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+(function(){
+  const link = document.getElementById('navHarga');
+  if(!link) return;
+  const observer = new IntersectionObserver(function(entries){
+    link.style.display = entries[0].isIntersecting ? 'none' : 'inline-flex';
+  }, {threshold: 0.1});
+  const hero = document.querySelector('.hero');
+  if(hero) observer.observe(hero);
+})();
+</script>
+</body>
+</html>
